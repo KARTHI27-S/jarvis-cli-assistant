@@ -1,12 +1,22 @@
 import os
 
-NOTES_FILE = os.path.expanduser("~/JARVIS/data/notes.txt")
+BASE_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__))
+    )
+)
+
+DATA_DIR = os.path.join(BASE_DIR, "data")
+NOTES_FILE = os.path.join(DATA_DIR, "notes.txt")
+
 
 class NotesManager:
-    def _init_(self, file_path=None):
-        os.makedirs(os.path.dirname(NOTES_FILE), exist_ok=True)
+    def __init__(self):
+        os.makedirs(DATA_DIR, exist_ok=True)
+
         if not os.path.exists(NOTES_FILE):
-            open(NOTES_FILE, "w").close()
+            with open(NOTES_FILE, "w"):
+                pass
 
     def add_note(self, note):
         with open(NOTES_FILE, "a") as f:
@@ -14,7 +24,8 @@ class NotesManager:
 
     def get_notes(self):
         with open(NOTES_FILE, "r") as f:
-            return [line.strip() for line in f if line.strip()]
+            return [line.strip() for line in f.readlines() if line.strip()]
 
     def clear_notes(self):
-        open(NOTES_FILE, "w").close()
+        with open(NOTES_FILE, "w"):
+            pass
