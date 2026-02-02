@@ -1,0 +1,11 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Runtime data
+data/notes.txt
+data/reminders.txt
+
+# OS / editor junk
+.DS_Store
+.vscode/

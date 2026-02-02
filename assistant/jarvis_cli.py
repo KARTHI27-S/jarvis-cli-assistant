@@ -21,9 +21,10 @@ def show_menu():
     print("5. Add a reminder")
     print("6. SOC Analyst Dashboard")
     print("7. Exit")
-
+    print("8. Clear all notes")
 
 def handle_choice(choice):
+    global notes, reminders
     if choice == "1":
         jarvis = SystemStatus()
         status = jarvis.get_status()
@@ -93,7 +94,9 @@ def handle_choice(choice):
     elif choice == "7":
         print("\nJARVIS: Shutting down. Have a productive day.")
         sys.exit(0)
-
+    elif choice == "8":
+        notes.clear_notes()
+        print("JARVIS: All notes cleared successfully.")
     else:
         print("\nJARVIS: Invalid command. Please try again.")
 

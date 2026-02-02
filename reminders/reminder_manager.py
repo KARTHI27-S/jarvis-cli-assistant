@@ -16,3 +16,6 @@ class ReminderManager:
         now = datetime.now()
         due = [r for r in self.reminders if r["due"] <= now]
         return due
+    def clear_reminders(self):
+        self.reminders = []
+        self.save_reminders()
