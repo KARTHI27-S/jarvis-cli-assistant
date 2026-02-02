@@ -27,7 +27,7 @@ assistant/ analysis/ core/ data/ monitoring/ notes/ reminders/ tests/ README.md
 ```bash
 git clone https://github.com/KARTHI27-S/jarvis-cli-assistant.git
 cd jarvis-cli-assistant
-python3 assistant/jarvis_cli.py
+python3 -m assistant.jarvis_cli
 
 
 Requirements
