@@ -30,10 +30,11 @@ cd jarvis-cli-assistant
 python3 -m assistant.jarvis_cli
 
 
-Requirements
+Tested Environments
 
+Kali Linux (VMware)
+Kali Linux (Dual Boot)
 Python 3.10+
-Linux OS (Tested on Kali Linux)
 
 
 Version
